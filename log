@@ -1,0 +1,6 @@
+ng new frontend
+cd .\frontend\
+ng g c tasks
+ng g c /tasks/tasks-add
+ng g c /tasks/tasks-list
+npm install --save bootstrap
