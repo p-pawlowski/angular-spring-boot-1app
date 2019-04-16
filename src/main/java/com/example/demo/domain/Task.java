@@ -23,6 +23,6 @@ public class Task {
     private String name;
     @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dueDate;
-    private Boolean completet;
+    private Boolean completed;
 
 }

@@ -25,12 +25,12 @@ export class TasksListComponent implements OnInit {
     }
 
     getDueDateLabel(task: Task) {
-        return task.completed ? 'label-success' : 'label-primary';
+        return task.completed ? 'badge badge-success' : 'badge badge-primary';
 
     }
 
     onTaskChange(event, task) {
-        console.log('Task has changed');
+        this.taskService.saveTask(task, event.target.checked).subscribe();
     }
 
 }
