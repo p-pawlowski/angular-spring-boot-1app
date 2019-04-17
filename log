@@ -4,3 +4,12 @@ ng g c tasks
 ng g c /tasks/tasks-add
 ng g c /tasks/tasks-list
 npm install --save bootstrap
+
+npm install --save-dev rimraf
+npm install --save-dev mkdirp
+npm install --save-dev copyfiles
+
+
+--deploy:
+ng build
+npm run deploy
