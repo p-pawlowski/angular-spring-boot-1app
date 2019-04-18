@@ -22,7 +22,7 @@ public class DemoApplication {
         return args -> {
             taskService.save(new Task(1L, "Create Spring Boot Application", new Date(), true));
             taskService.save(new Task(2L, "Create Spring Project Packages", new Date(), false));
-            taskService.save(new Task(3L, "Create the Task Domain Calass", new Date(), false));
+            taskService.save(new Task(3L, "Create the Task Domain Calss", new Date(), false));
         };
     }
 

@@ -16,11 +16,13 @@ public class TaskController {
 
     @GetMapping(value={"","/"})
     public Iterable<Task> listTasks(){
+        System.out.println("Test");
         return this.taskService.list();
     }
 
     @PostMapping("/save")
     public Task saveTask(@RequestBody Task task){
+        System.out.println("ABC");
         return this.taskService.save(task);
     }
 
