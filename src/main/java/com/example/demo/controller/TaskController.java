@@ -26,7 +26,10 @@ public class TaskController {
 
     @DeleteMapping("delete/{id}")
     public void deleteTask(@PathVariable Long id){
-        taskService.deleteById(id);
+        try {
+            taskService.deleteById(id);
+        } catch (Exception ex) {
+        }
     }
 
 }

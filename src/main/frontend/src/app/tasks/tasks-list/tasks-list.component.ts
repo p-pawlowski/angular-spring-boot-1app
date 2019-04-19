@@ -39,4 +39,8 @@ export class TasksListComponent implements OnInit {
         this.taskService.saveTask(task, event.target.checked).subscribe();
     }
 
+    delete(task: Task){
+        return this.taskService.deleteTask(task).subscribe();
+    }
+
 }

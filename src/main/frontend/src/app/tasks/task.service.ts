@@ -26,4 +26,9 @@ export class TaskService{
         return this.http.post('/api/tasks/save', task);
     }
 
+    deleteTask(task: Task){
+        return this.http.delete('/api/tasks/delete/' + task.id);
+    }
+
+
 }

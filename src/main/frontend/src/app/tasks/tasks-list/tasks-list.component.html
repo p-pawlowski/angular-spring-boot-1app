@@ -7,6 +7,7 @@
                    [checked]="task.completed">
             <span ngClass="{{task.completed ? 'name completed' : 'name'}}">{{task.name}}</span>
             <span ngClass="label {{ getDueDateLabel(task)}} float-right">{{task.dueDate}}</span>
+            <span><button (click)="delete(task)">Delete Record</button></span>
         </div>
     </li>
 </ul>
