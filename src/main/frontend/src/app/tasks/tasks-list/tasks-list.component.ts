@@ -27,12 +27,6 @@ export class TasksListComponent implements OnInit {
             (task: Task) => this.tasks.push(task)
         );
 
-        this.taskService.onTaskDeleted.subscribe(
-            (task: Task) =>
-                this.tasks.splice(this.tasks.indexOf(task, 0), 1)
-        );
-
-
     }
 
     getDueDateLabel(task: Task) {
@@ -45,7 +39,7 @@ export class TasksListComponent implements OnInit {
     }
 
     delete(task: Task) {
-        this.taskService.onTaskDeleted.emit(task);
+        this.tasks.splice(this.tasks.indexOf(task, 0), 1)
         return this.taskService.deleteTask(task).subscribe();
     }
 }

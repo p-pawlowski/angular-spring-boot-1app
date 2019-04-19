@@ -1,8 +1,7 @@
 <ul class="list-group">
-    <li *ngFor="let task of tasks" class="list-group-item clearfix">
+    <li *ngFor="let task of tasks" class="list-group-item  clearfix">
         <div class="task-checkbox">
             <input type="checkbox"
-                   class="list-child align-middle"
                    (change)="onTaskChange($event,task)"
                    [checked]="task.completed">
             <span ngClass="{{task.completed ? 'name completed' : 'name'}}">{{task.name}}</span>
