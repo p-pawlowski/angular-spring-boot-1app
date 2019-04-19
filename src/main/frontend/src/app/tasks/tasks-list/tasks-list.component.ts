@@ -29,7 +29,7 @@ export class TasksListComponent implements OnInit {
 
         this.taskService.onTaskDeleted.subscribe(
             (task: Task) =>
-                this.tasks.splice(this.tasks.indexOf(task), 1)
+                this.tasks.splice(this.tasks.indexOf(task, 0), 1)
         );
 
 
@@ -45,10 +45,7 @@ export class TasksListComponent implements OnInit {
     }
 
     delete(task: Task) {
-        return this.taskService.deleteTask(task).subscribe(
-            (newTask: Task) => {
-                this.taskService.onTaskDeleted.emit(newTask);
-            }
-        );
+        this.taskService.onTaskDeleted.emit(task);
+        return this.taskService.deleteTask(task).subscribe();
     }
 }
