@@ -24,7 +24,12 @@ export class TasksListComponent implements OnInit {
             );
 
         this.taskService.onTaskAdded.subscribe(
-            (task : Task) => this.tasks.push(task)
+            (task: Task) => this.tasks.push(task)
+        );
+
+        this.taskService.onTaskDeleted.subscribe(
+            (task: Task) =>
+                this.tasks.splice(this.tasks.indexOf(task), 1)
         );
 
 
@@ -39,8 +44,11 @@ export class TasksListComponent implements OnInit {
         this.taskService.saveTask(task, event.target.checked).subscribe();
     }
 
-    delete(task: Task){
-        return this.taskService.deleteTask(task).subscribe();
+    delete(task: Task) {
+        return this.taskService.deleteTask(task).subscribe(
+            (newTask: Task) => {
+                this.taskService.onTaskDeleted.emit(newTask);
+            }
+        );
     }
-
 }

@@ -8,6 +8,7 @@ import {Task} from "./task.model";
 export class TaskService{
 
     onTaskAdded = new EventEmitter<Task>();
+    onTaskDeleted = new EventEmitter<Task>();
 
     constructor(private http: HttpClient ){
 
