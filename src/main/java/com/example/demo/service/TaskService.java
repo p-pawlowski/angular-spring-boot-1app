@@ -9,4 +9,6 @@ public interface TaskService {
 
     Task save(Task task);
 
+    void deleteById(Long id);
+
 }

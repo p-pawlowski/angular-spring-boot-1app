@@ -16,12 +16,17 @@ public class TaskController {
 
     @GetMapping(value={"","/"})
     public Iterable<Task> listTasks(){
-        return this.taskService.list();
+        return taskService.list();
     }
 
     @PostMapping("/save")
     public Task saveTask(@RequestBody Task task){
-        return this.taskService.save(task);
+        return taskService.save(task);
+    }
+
+    @DeleteMapping("delete/{id}")
+    public void deleteTask(@PathVariable Long id){
+        taskService.deleteById(id);
     }
 
 }

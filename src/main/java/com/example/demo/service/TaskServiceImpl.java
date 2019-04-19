@@ -15,11 +15,16 @@ public class TaskServiceImpl  implements TaskService{
 
     @Override
     public Iterable<Task> list() {
-        return this.taskRepository.findAll();
+        return taskRepository.findAll();
     }
 
     @Override
     public Task save(Task task) {
-        return this.taskRepository.save(task);
+        return taskRepository.save(task);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        taskRepository.deleteById(id);
     }
 }
