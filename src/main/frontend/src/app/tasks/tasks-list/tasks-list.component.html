@@ -1,13 +1,15 @@
 <ul class="list-group">
-    <li *ngFor="let task of tasks" class="list-group-item">
+    <li *ngFor="let task of tasks" class="list-group-item clearfix">
         <div class="task-checkbox">
             <input type="checkbox"
-                   class="list-child"
+                   class="list-child align-middle"
                    (change)="onTaskChange($event,task)"
                    [checked]="task.completed">
             <span ngClass="{{task.completed ? 'name completed' : 'name'}}">{{task.name}}</span>
-            <span ngClass="label {{ getDueDateLabel(task)}} float-right">{{task.dueDate}}</span>
-            <span><button (click)="delete(task)">Delete Record</button></span>
+            <button type="button" ngClass="close float-right align-middle" aria-label="Close" (click)="delete(task)">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <span ngClass="label {{ getDueDateLabel(task)}} float-right align-middle mt-1">{{task.dueDate}}</span>
         </div>
     </li>
 </ul>
